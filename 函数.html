@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title></title>
+    <script type="text/javascript">
+        /*
+         * 函数可以用来当构造方法使用
+         * 函数声明，不支持重载，如果有多个方法重名以最后一个方法为准
+         * 匿名函数，用法类似函数指针
+         * 函数参数是一个数组，arguments
+         *
+         * */
+        function Person() {
+            /*
+             * 匿名函数
+             * 这种形式比较长用，有点类似Java的成员方法
+             * */
+            this.speak = function (name, age) {
+                document.write("name:" + name + " age:" + age + "<br>");
+            };
+        }
+        var person = new Person();
+        person.name = "lg";
+        person.age = 18;
+        person.speak("lg", 18);
+
+        /*
+         * 最原始的函数定义方法
+         * 所以函数的定义方式最终都是抓换为这种方式
+         * 可读性差，仅了解即可
+         * */
+        var sum = Function("n1", "n2", "return n1 + n2;");
+        document.write(sum(1, 2));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
